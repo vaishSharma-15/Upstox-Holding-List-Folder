@@ -1,6 +1,6 @@
 const INDICES = [
-  { name: "NIFTY 50", exp: "Exp. 18 Aug", value: "24,471.70", change: "-112.10 (-0.46%)", isUp: false },
-  { name: "SENSEX", exp: "Exp. 13 Aug", value: "78,154.25", change: "-388.19 (-0.49%)", isUp: false },
+  { name: "NIFTY 50", exp: "Exp. 18 Aug", value: "24,583.80", change: "+13.15 (+0.05%)", isUp: true },
+  { name: "SENSEX", exp: "Exp. 13 Aug", value: "78,199.43", change: "-343.01 (-0.44%)", isUp: false },
 ];
 
 export default function TopTicker() {
