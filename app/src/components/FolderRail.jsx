@@ -10,7 +10,7 @@ function Chip({ active, onClick, children }) {
   return (
     <button
       onClick={onClick}
-      className={`shrink-0 whitespace-nowrap rounded-full border px-4 py-2 text-xs font-medium transition-colors ${
+      className={`shrink-0 whitespace-nowrap rounded-full border px-3.5 py-1.5 text-[11px] font-medium transition-colors ${
         active ? "border-accent-2 bg-surface text-accent-2" : "border-border bg-surface text-fg"
       }`}
     >
@@ -23,7 +23,7 @@ export default function FolderRail({ holdings, activeView, onSelectView, onCreat
   const unassignedCount = holdings.filter((h) => h.folderIds.length === 0).length;
 
   return (
-    <div className="flex shrink-0 gap-2.5 overflow-x-auto border-b border-border bg-surface px-4 py-3.5">
+    <div className="flex shrink-0 gap-2 overflow-x-auto border-b border-border bg-surface px-4 py-3">
       <Chip active={isViewActive(activeView, { type: "all" })} onClick={() => onSelectView({ type: "all" })}>
         All
       </Chip>
@@ -37,7 +37,7 @@ export default function FolderRail({ holdings, activeView, onSelectView, onCreat
 
       <button
         onClick={onCreateClick}
-        className="flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded-full border border-dashed border-accent px-4 py-2 text-xs font-medium text-accent"
+        className="flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded-full border border-dashed border-accent px-3.5 py-1.5 text-[11px] font-medium text-accent"
       >
         <PlusIcon /> New Folder
       </button>

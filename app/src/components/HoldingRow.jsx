@@ -25,37 +25,37 @@ export default function HoldingRow({
         onDragStart?.(holding.id);
       }}
       onDragEnd={() => onDragEnd?.()}
-      className={`cursor-grab border-b border-border px-4 py-4 transition-[opacity,background-color] duration-300 active:cursor-grabbing ${
+      className={`cursor-grab border-b border-border px-4 py-3 transition-[opacity,background-color] duration-300 active:cursor-grabbing ${
         isDragging ? "opacity-40" : "opacity-100"
       } ${isHighlighted ? "bg-accent/10" : ""}`}
     >
       <div className="flex items-center justify-between">
-        <div className="flex min-w-0 items-center gap-2">
-          <span className="truncate text-sm font-semibold text-fg">{holding.symbol}</span>
+        <div className="flex min-w-0 items-center gap-1.5">
+          <span className="truncate text-xs font-semibold text-fg">{holding.symbol}</span>
           {folderCount > 0 && (
-            <span className="flex shrink-0 items-center gap-1 rounded-full bg-accent/15 px-2 py-0.5 text-[10px] font-medium text-accent-2">
-              <FolderGlyphIcon size={10} active />
+            <span className="flex shrink-0 items-center gap-1 rounded-full bg-accent/15 px-1.5 py-0.5 text-[9px] font-medium text-accent-2">
+              <FolderGlyphIcon size={9} active />
               {folderCount > 1 ? `×${folderCount}` : ""}
             </span>
           )}
         </div>
-        <div className="flex shrink-0 items-center gap-3">
-          <span className={`text-sm font-semibold ${isUp ? "text-up" : "text-down"}`}>
+        <div className="flex shrink-0 items-center gap-2">
+          <span className={`text-xs font-semibold ${isUp ? "text-up" : "text-down"}`}>
             {isUp ? "+" : ""}
             {formatNumber(pnl)} ({formatPct(pnlPct)})
           </span>
           <button onClick={() => onOpenMenu?.(holding)} aria-label="More options" className="text-muted">
-            <MoreVerticalIcon size={18} />
+            <MoreVerticalIcon size={16} />
           </button>
         </div>
       </div>
 
-      <div className="mt-2 flex items-center justify-between text-xs text-muted">
+      <div className="mt-1.5 flex items-center justify-between text-[11px] text-muted">
         <span>Invested {formatNumber(invested)}</span>
         <span>{formatNumber(holding.avgPrice)} Avg.</span>
       </div>
 
-      <div className="mt-1 flex items-center justify-between text-xs text-muted">
+      <div className="mt-0.5 flex items-center justify-between text-[11px] text-muted">
         <span>Qty. {formatQty(holding.qty)}</span>
         <span>
           {formatNumber(holding.ltp)}{" "}

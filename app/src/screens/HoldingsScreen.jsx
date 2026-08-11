@@ -130,33 +130,33 @@ export default function HoldingsScreen() {
         onWalletClick={() => pushToast("Account — demo only")}
       />
 
-      <div className="flex items-center gap-6 border-b border-border bg-surface px-4 pt-4">
-        <button className="border-b-2 border-fg pb-3 text-sm font-semibold text-fg">
+      <div className="flex items-center gap-5 border-b border-border bg-surface px-4 pt-3">
+        <button className="border-b-2 border-fg pb-2.5 text-xs font-semibold text-fg">
           Stocks ({holdings.length})
         </button>
         <button
           onClick={() => pushToast("Mutual Funds — demo only")}
-          className="pb-3 text-sm font-medium text-muted"
+          className="pb-2.5 text-xs font-medium text-muted"
         >
           Mutual Funds
         </button>
       </div>
 
-      <div className="flex items-center justify-between border-b border-border bg-surface px-4 py-4">
+      <div className="flex items-center justify-between border-b border-border bg-surface px-4 py-3">
         <div>
-          <p className="text-xs text-muted">Invested</p>
-          <p className="mt-0.5 text-lg font-semibold text-fg">{formatNumber(invested)}</p>
-          <p className="mt-3 text-xs text-muted">Total returns</p>
-          <p className={`mt-0.5 text-sm font-semibold ${isUp ? "text-up" : "text-down"}`}>
+          <p className="text-[11px] text-muted">Invested</p>
+          <p className="mt-0.5 text-base font-semibold text-fg">{formatNumber(invested)}</p>
+          <p className="mt-2 text-[11px] text-muted">Total returns</p>
+          <p className={`mt-0.5 text-xs font-semibold ${isUp ? "text-up" : "text-down"}`}>
             {isUp ? "+" : ""}
             {formatNumber(pnl)} ({formatPct(pnlPct)})
           </p>
         </div>
         <div className="text-right">
-          <p className="text-xs text-muted">Current</p>
-          <p className="mt-0.5 text-lg font-semibold text-fg">{formatNumber(current)}</p>
-          <p className="mt-3 text-xs text-muted">Today's returns</p>
-          <p className={`mt-0.5 text-sm font-semibold ${isDayUp ? "text-up" : "text-down"}`}>
+          <p className="text-[11px] text-muted">Current</p>
+          <p className="mt-0.5 text-base font-semibold text-fg">{formatNumber(current)}</p>
+          <p className="mt-2 text-[11px] text-muted">Today's returns</p>
+          <p className={`mt-0.5 text-xs font-semibold ${isDayUp ? "text-up" : "text-down"}`}>
             {isDayUp ? "+" : ""}
             {formatNumber(totalDayChange)}
           </p>
@@ -182,7 +182,7 @@ export default function HoldingsScreen() {
             <>
               {folders.length > 0 && (
                 <>
-                  <p className="px-4 pb-2 pt-5 text-xs font-semibold uppercase tracking-wide text-muted">
+                  <p className="px-4 pb-1.5 pt-4 text-[10px] font-semibold uppercase tracking-wide text-muted">
                     Folders
                   </p>
                   {folders.map((folder) => (
@@ -199,7 +199,7 @@ export default function HoldingsScreen() {
                 </>
               )}
 
-              <p className="px-4 pb-2 pt-5 text-xs font-semibold uppercase tracking-wide text-muted">
+              <p className="px-4 pb-1.5 pt-4 text-[10px] font-semibold uppercase tracking-wide text-muted">
                 Unassigned
               </p>
               {unassignedHoldings.length === 0 ? (

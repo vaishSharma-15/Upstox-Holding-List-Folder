@@ -10,18 +10,18 @@ const TABS = [
 
 export default function BottomTabBar({ active, onSelect }) {
   return (
-    <nav className="flex border-t border-border bg-surface px-1 pb-2 pt-2.5">
+    <nav className="flex border-t border-border bg-surface px-1 pb-1.5 pt-2">
       {TABS.map(({ key, label, Icon }) => {
         const isActive = active === key;
         return (
           <button
             key={key}
             onClick={() => onSelect(key)}
-            className={`flex flex-1 flex-col items-center gap-1.5 py-1.5 text-[11px] ${
+            className={`flex flex-1 flex-col items-center gap-1 py-1 text-[10px] ${
               isActive ? "font-semibold text-fg" : "text-muted"
             }`}
           >
-            <Icon active={isActive} size={22} />
+            <Icon active={isActive} size={20} />
             {label}
           </button>
         );
