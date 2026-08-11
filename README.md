@@ -9,7 +9,7 @@ per folder, and keep everything else in a clean "Unassigned" bucket.
 > concept demo built to pitch a feature idea — mock data only, no real
 > account, login, or trading functionality.
 
-**Live demo:** _add your Vercel URL here_
+**Live demo:** [upstox-holding-list-folder.vercel.app](https://upstox-holding-list-folder.vercel.app)
 
 ---
 
