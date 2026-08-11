@@ -34,7 +34,7 @@ function AppShell() {
         {/* dynamic island */}
         <div className="pointer-events-none absolute left-1/2 top-2 z-40 hidden h-[28px] w-[108px] -translate-x-1/2 rounded-full bg-black sm:block" />
 
-        <div className="min-h-0 flex-1 overflow-y-auto sm:pt-7">
+        <div className="min-h-0 flex-1 overflow-y-auto sm:pt-11">
           {screen === "holdings" ? <HoldingsScreen /> : <HomeScreen />}
         </div>
         <BottomTabBar active={screen} onSelect={handleTabSelect} />
