@@ -1,6 +1,7 @@
 import { HoldingsProvider, useHoldingsDispatch, useHoldingsState } from "./context/HoldingsContext";
 import { ToastProvider, useToast } from "./context/ToastContext";
 import BottomTabBar from "./components/BottomTabBar";
+import StatusBar from "./components/StatusBar";
 import ToastStack from "./components/ToastStack";
 import HomeScreen from "./screens/HomeScreen";
 import HoldingsScreen from "./screens/HoldingsScreen";
@@ -30,6 +31,8 @@ function AppShell() {
         <div className="absolute -left-[12px] top-[150px] hidden h-12 w-[4px] rounded-l bg-neutral-800 sm:block" />
         <div className="absolute -left-[12px] top-[172px] hidden h-12 w-[4px] rounded-l bg-neutral-800 sm:block" />
         <div className="absolute -right-[12px] top-[130px] hidden h-16 w-[4px] rounded-r bg-neutral-800 sm:block" />
+
+        <StatusBar />
 
         {/* dynamic island */}
         <div className="pointer-events-none absolute left-1/2 top-2 z-40 hidden h-[28px] w-[108px] -translate-x-1/2 rounded-full bg-black sm:block" />
