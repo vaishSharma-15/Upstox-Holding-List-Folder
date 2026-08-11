@@ -5,13 +5,13 @@ const INDICES = [
 
 export default function TopTicker() {
   return (
-    <div className="flex shrink-0 divide-x divide-border bg-tint px-4 py-3.5 text-sm">
+    <div className="flex shrink-0 divide-x divide-border bg-tint px-4 py-3.5 text-xs">
       {INDICES.map((index) => (
         <div key={index.name} className={index === INDICES[0] ? "flex-1 pr-4" : "flex-1 pl-4"}>
-          <p className="text-sm text-muted">
-            {index.name} <span className="text-xs">{index.exp}</span>
+          <p className="text-xs text-muted">
+            {index.name} <span className="text-[11px]">{index.exp}</span>
           </p>
-          <p className="mt-0.5 font-semibold text-fg">
+          <p className="mt-0.5 text-sm font-semibold text-fg">
             {index.value} <span className={index.isUp ? "text-up" : "text-down"}>{index.change}</span>
           </p>
         </div>

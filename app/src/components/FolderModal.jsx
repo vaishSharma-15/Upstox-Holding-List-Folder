@@ -21,23 +21,23 @@ export default function FolderModal({ folder, onSave, onDelete, onClose }) {
   return (
     <div className="fixed inset-0 z-50 flex items-end justify-center bg-black/60 animate-fade-in sm:items-center">
       <div className="w-full max-w-sm rounded-t-2xl bg-surface-2 p-6 shadow-2xl animate-slide-up sm:rounded-2xl">
-        <p className="text-lg font-semibold text-fg">
+        <p className="text-base font-semibold text-fg">
           {isEditing ? "Edit Folder" : "New Folder"}
         </p>
 
-        <label className="mt-5 block text-sm text-muted">Folder name</label>
+        <label className="mt-5 block text-xs text-muted">Folder name</label>
         <input
           autoFocus
           value={name}
           onChange={(e) => setName(e.target.value.slice(0, NAME_MAX_LENGTH))}
           placeholder="e.g. Long Term"
-          className="mt-2 w-full rounded-lg border border-border bg-surface px-3.5 py-3 text-base text-fg outline-none focus:border-accent"
+          className="mt-2 w-full rounded-lg border border-border bg-surface px-3.5 py-3 text-sm text-fg outline-none focus:border-accent"
         />
         <p className="mt-1 text-right text-xs text-muted">
           {trimmedName.length}/{NAME_MAX_LENGTH}
         </p>
 
-        <p className="mt-4 text-sm text-muted">Color</p>
+        <p className="mt-4 text-xs text-muted">Color</p>
         <div className="mt-2.5 flex gap-2.5">
           {FOLDER_COLORS.map((c) => (
             <button
@@ -50,7 +50,7 @@ export default function FolderModal({ folder, onSave, onDelete, onClose }) {
           ))}
         </div>
 
-        <p className="mt-4 text-sm text-muted">Icon</p>
+        <p className="mt-4 text-xs text-muted">Icon</p>
         <div className="mt-2.5 flex flex-wrap gap-2.5">
           {FOLDER_ICONS.map((i) => (
             <button

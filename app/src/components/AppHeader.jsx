@@ -8,7 +8,7 @@ export default function AppHeader({ placeholder, showPlus, onPlusClick, onBellCl
 
       <div className="flex flex-1 items-center gap-2 rounded-full bg-tint px-3.5 py-2.5 text-muted">
         <SearchIcon />
-        <span className="truncate text-sm">{placeholder}</span>
+        <span className="truncate text-xs">{placeholder}</span>
       </div>
 
       <button
@@ -30,7 +30,7 @@ export default function AppHeader({ placeholder, showPlus, onPlusClick, onBellCl
       {showPlus && (
         <button
           onClick={onPlusClick}
-          className="flex h-10 shrink-0 items-center gap-1 rounded-xl bg-fg px-3 text-[13px] font-semibold text-ink"
+          className="flex h-10 shrink-0 items-center gap-1 rounded-xl bg-fg px-3 text-xs font-semibold text-ink"
         >
           <ZapIcon size={13} /> Plus
         </button>

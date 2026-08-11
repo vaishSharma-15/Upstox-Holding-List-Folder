@@ -47,22 +47,22 @@ export default function FolderCard({ folder, holdings, onClick, onDropHolding })
           <FolderIcon id={folder.icon} size={22} />
         </span>
         <div>
-          <p className="text-base font-semibold text-fg">{folder.name}</p>
-          <p className="mt-0.5 text-sm text-muted">{holdings.length} stocks</p>
+          <p className="text-sm font-semibold text-fg">{folder.name}</p>
+          <p className="mt-0.5 text-xs text-muted">{holdings.length} stocks</p>
         </div>
       </div>
 
       <div className="text-right">
         {holdings.length > 0 ? (
           <>
-            <p className="text-base font-semibold text-fg">{formatNumber(totals.current)}</p>
-            <p className={`mt-0.5 text-sm font-medium ${isUp ? "text-up" : "text-down"}`}>
+            <p className="text-sm font-semibold text-fg">{formatNumber(totals.current)}</p>
+            <p className={`mt-0.5 text-xs font-medium ${isUp ? "text-up" : "text-down"}`}>
               {isUp ? "+" : ""}
               {formatNumber(pnl)} ({formatPct(pnlPct)})
             </p>
           </>
         ) : (
-          <p className="text-sm text-muted">Empty</p>
+          <p className="text-xs text-muted">Empty</p>
         )}
       </div>
     </button>

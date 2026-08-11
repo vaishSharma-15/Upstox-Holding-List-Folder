@@ -83,10 +83,10 @@ export default function HomeScreen() {
             <button
               key={label}
               onClick={() => pushToast(`${label} — demo only`)}
-              className="flex flex-col items-center gap-2 text-xs text-fg"
+              className="flex flex-col items-center gap-2 text-[11px] text-fg"
             >
               <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-tint text-accent">
-                <Icon size={22} />
+                <Icon size={20} />
               </span>
               {label}
             </button>
@@ -97,20 +97,20 @@ export default function HomeScreen() {
           onClick={goToHoldings}
           className="flex w-full items-center justify-between border-y border-border bg-surface px-4 py-4"
         >
-          <span className="flex items-center gap-2.5 text-base font-semibold text-fg">
-            <BriefcaseIcon size={20} /> Portfolio (Today)
+          <span className="flex items-center gap-2.5 text-sm font-semibold text-fg">
+            <BriefcaseIcon size={18} /> Portfolio (Today)
           </span>
           <ChevronRightIcon />
         </button>
 
         <div className="flex divide-x divide-border border-b border-border bg-surface px-4 py-4">
           <button onClick={goToHoldings} className="flex-1 pr-4 text-left">
-            <p className="text-sm text-muted underline decoration-dotted">Positions P&amp;L (0)</p>
-            <p className="mt-1.5 text-base font-semibold text-fg">0.00</p>
+            <p className="text-xs text-muted underline decoration-dotted">Positions P&amp;L (0)</p>
+            <p className="mt-1.5 text-sm font-semibold text-fg">0.00</p>
           </button>
           <button onClick={goToHoldings} className="flex-1 pl-4 text-left">
-            <p className="text-sm text-muted underline decoration-dotted">Holdings P&amp;L ({holdings.length})</p>
-            <p className={`mt-1.5 text-base font-semibold ${isUp ? "text-up" : "text-down"}`}>
+            <p className="text-xs text-muted underline decoration-dotted">Holdings P&amp;L ({holdings.length})</p>
+            <p className={`mt-1.5 text-sm font-semibold ${isUp ? "text-up" : "text-down"}`}>
               {isUp ? "+" : ""}
               {holdingsPnl.toFixed(2)} ({formatPct(holdingsPnlPct)})
             </p>
@@ -122,7 +122,7 @@ export default function HomeScreen() {
             <button
               key={label}
               onClick={() => pushToast("Demo only — not wired up")}
-              className="flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded-full border border-border px-3.5 py-2 text-sm font-medium text-fg"
+              className="flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded-full border border-border px-3.5 py-2 text-xs font-medium text-fg"
             >
               <Icon /> {label}
             </button>
@@ -131,27 +131,27 @@ export default function HomeScreen() {
 
         <div className="flex items-center justify-between border-b border-border bg-tint px-4 py-5">
           <div>
-            <p className="text-base font-semibold text-fg">Your trading account is ready!</p>
-            <p className="mt-1 text-sm text-muted">Place your first order right now!</p>
+            <p className="text-sm font-semibold text-fg">Your trading account is ready!</p>
+            <p className="mt-1 text-xs text-muted">Place your first order right now!</p>
           </div>
           <button
             onClick={() => pushToast("This is a concept demo — no real account actions")}
-            className="shrink-0 rounded-lg bg-accent px-4 py-2.5 text-sm font-semibold text-white"
+            className="shrink-0 rounded-lg bg-accent px-4 py-2.5 text-xs font-semibold text-white"
           >
             Activate
           </button>
         </div>
 
         <div className="px-4 py-5">
-          <p className="flex items-center gap-2 text-base font-semibold text-fg">
-            <LineChartIcon size={20} /> Trending Stocks
+          <p className="flex items-center gap-2 text-sm font-semibold text-fg">
+            <LineChartIcon size={18} /> Trending Stocks
           </p>
           <div className="mt-4 flex gap-2.5 overflow-x-auto">
             {TRENDING_TABS.map((tab, i) => (
               <button
                 key={tab}
                 onClick={() => pushToast("Demo only — not wired up")}
-                className={`shrink-0 whitespace-nowrap rounded-full border px-3.5 py-2 text-sm font-medium ${
+                className={`shrink-0 whitespace-nowrap rounded-full border px-3.5 py-2 text-xs font-medium ${
                   i === 0 ? "border-accent-2 text-accent-2" : "border-border text-fg"
                 }`}
               >
@@ -164,17 +164,17 @@ export default function HomeScreen() {
             {trending.map((h) => (
               <div key={h.id} className="flex items-center justify-between py-3.5">
                 <div className="flex items-center gap-3">
-                  <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-tint text-sm font-semibold text-accent">
+                  <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-tint text-xs font-semibold text-accent">
                     {h.symbol.slice(0, 2)}
                   </span>
                   <div>
-                    <p className="text-base font-medium text-fg">{h.symbol}</p>
-                    <p className="mt-0.5 text-sm text-muted">{h.sector}</p>
+                    <p className="text-sm font-medium text-fg">{h.symbol}</p>
+                    <p className="mt-0.5 text-xs text-muted">{h.sector}</p>
                   </div>
                 </div>
                 <div className="text-right">
-                  <p className="text-base font-semibold text-fg">{h.ltp.toFixed(2)}</p>
-                  <p className={`mt-0.5 text-sm ${h.dayChangePct >= 0 ? "text-up" : "text-down"}`}>
+                  <p className="text-sm font-semibold text-fg">{h.ltp.toFixed(2)}</p>
+                  <p className={`mt-0.5 text-xs ${h.dayChangePct >= 0 ? "text-up" : "text-down"}`}>
                     {formatPct(h.dayChangePct)}
                   </p>
                 </div>

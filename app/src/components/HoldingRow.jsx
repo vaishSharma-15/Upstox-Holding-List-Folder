@@ -31,16 +31,16 @@ export default function HoldingRow({
     >
       <div className="flex items-center justify-between">
         <div className="flex min-w-0 items-center gap-2">
-          <span className="truncate text-base font-semibold text-fg">{holding.symbol}</span>
+          <span className="truncate text-sm font-semibold text-fg">{holding.symbol}</span>
           {folderCount > 0 && (
-            <span className="flex shrink-0 items-center gap-1 rounded-full bg-accent/15 px-2 py-0.5 text-[11px] font-medium text-accent-2">
-              <FolderGlyphIcon size={11} active />
+            <span className="flex shrink-0 items-center gap-1 rounded-full bg-accent/15 px-2 py-0.5 text-[10px] font-medium text-accent-2">
+              <FolderGlyphIcon size={10} active />
               {folderCount > 1 ? `×${folderCount}` : ""}
             </span>
           )}
         </div>
         <div className="flex shrink-0 items-center gap-3">
-          <span className={`text-base font-semibold ${isUp ? "text-up" : "text-down"}`}>
+          <span className={`text-sm font-semibold ${isUp ? "text-up" : "text-down"}`}>
             {isUp ? "+" : ""}
             {formatNumber(pnl)} ({formatPct(pnlPct)})
           </span>
@@ -50,12 +50,12 @@ export default function HoldingRow({
         </div>
       </div>
 
-      <div className="mt-2 flex items-center justify-between text-sm text-muted">
+      <div className="mt-2 flex items-center justify-between text-xs text-muted">
         <span>Invested {formatNumber(invested)}</span>
         <span>{formatNumber(holding.avgPrice)} Avg.</span>
       </div>
 
-      <div className="mt-1 flex items-center justify-between text-sm text-muted">
+      <div className="mt-1 flex items-center justify-between text-xs text-muted">
         <span>Qty. {formatQty(holding.qty)}</span>
         <span>
           {formatNumber(holding.ltp)}{" "}

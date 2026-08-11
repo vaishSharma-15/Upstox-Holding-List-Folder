@@ -131,12 +131,12 @@ export default function HoldingsScreen() {
       />
 
       <div className="flex items-center gap-6 border-b border-border bg-surface px-4 pt-4">
-        <button className="border-b-2 border-fg pb-3 text-base font-semibold text-fg">
+        <button className="border-b-2 border-fg pb-3 text-sm font-semibold text-fg">
           Stocks ({holdings.length})
         </button>
         <button
           onClick={() => pushToast("Mutual Funds — demo only")}
-          className="pb-3 text-base font-medium text-muted"
+          className="pb-3 text-sm font-medium text-muted"
         >
           Mutual Funds
         </button>
@@ -144,19 +144,19 @@ export default function HoldingsScreen() {
 
       <div className="flex items-center justify-between border-b border-border bg-surface px-4 py-4">
         <div>
-          <p className="text-sm text-muted">Invested</p>
-          <p className="mt-0.5 text-xl font-semibold text-fg">{formatNumber(invested)}</p>
-          <p className="mt-3 text-sm text-muted">Total returns</p>
-          <p className={`mt-0.5 text-base font-semibold ${isUp ? "text-up" : "text-down"}`}>
+          <p className="text-xs text-muted">Invested</p>
+          <p className="mt-0.5 text-lg font-semibold text-fg">{formatNumber(invested)}</p>
+          <p className="mt-3 text-xs text-muted">Total returns</p>
+          <p className={`mt-0.5 text-sm font-semibold ${isUp ? "text-up" : "text-down"}`}>
             {isUp ? "+" : ""}
             {formatNumber(pnl)} ({formatPct(pnlPct)})
           </p>
         </div>
         <div className="text-right">
-          <p className="text-sm text-muted">Current</p>
-          <p className="mt-0.5 text-xl font-semibold text-fg">{formatNumber(current)}</p>
-          <p className="mt-3 text-sm text-muted">Today's returns</p>
-          <p className={`mt-0.5 text-base font-semibold ${isDayUp ? "text-up" : "text-down"}`}>
+          <p className="text-xs text-muted">Current</p>
+          <p className="mt-0.5 text-lg font-semibold text-fg">{formatNumber(current)}</p>
+          <p className="mt-3 text-xs text-muted">Today's returns</p>
+          <p className={`mt-0.5 text-sm font-semibold ${isDayUp ? "text-up" : "text-down"}`}>
             {isDayUp ? "+" : ""}
             {formatNumber(totalDayChange)}
           </p>

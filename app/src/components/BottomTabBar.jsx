@@ -17,11 +17,11 @@ export default function BottomTabBar({ active, onSelect }) {
           <button
             key={key}
             onClick={() => onSelect(key)}
-            className={`flex flex-1 flex-col items-center gap-1.5 py-1.5 text-xs ${
+            className={`flex flex-1 flex-col items-center gap-1.5 py-1.5 text-[11px] ${
               isActive ? "font-semibold text-fg" : "text-muted"
             }`}
           >
-            <Icon active={isActive} size={24} />
+            <Icon active={isActive} size={22} />
             {label}
           </button>
         );
