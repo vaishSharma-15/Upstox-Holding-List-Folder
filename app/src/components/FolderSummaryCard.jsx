@@ -15,6 +15,12 @@ export default function FolderSummaryCard({ folder, holdings, onEdit }) {
   const pnlPct = totals.invested === 0 ? 0 : (pnl / totals.invested) * 100;
   const isUp = pnl >= 0;
 
+  const totalDayChange = holdings.reduce(
+    (sum, h) => sum + (h.ltp - h.ltp / (1 + h.dayChangePct / 100)) * h.qty,
+    0
+  );
+  const isDayUp = totalDayChange >= 0;
+
   return (
     <div className="shrink-0 border-b border-border bg-surface px-4 py-4">
       <div className="flex items-center justify-between">
@@ -45,11 +51,20 @@ export default function FolderSummaryCard({ folder, holdings, onEdit }) {
       </div>
 
       <div className="mt-3 flex items-center justify-between">
-        <p className="text-sm text-muted">Overall returns</p>
-        <p className={`text-base font-semibold ${isUp ? "text-up" : "text-down"}`}>
-          {isUp ? "+" : ""}
-          {formatNumber(pnl)} ({formatPct(pnlPct)})
-        </p>
+        <div>
+          <p className="text-sm text-muted">Overall returns</p>
+          <p className={`mt-0.5 text-base font-semibold ${isUp ? "text-up" : "text-down"}`}>
+            {isUp ? "+" : ""}
+            {formatNumber(pnl)} ({formatPct(pnlPct)})
+          </p>
+        </div>
+        <div className="text-right">
+          <p className="text-sm text-muted">Today's returns</p>
+          <p className={`mt-0.5 text-base font-semibold ${isDayUp ? "text-up" : "text-down"}`}>
+            {isDayUp ? "+" : ""}
+            {formatNumber(totalDayChange)}
+          </p>
+        </div>
       </div>
     </div>
   );
