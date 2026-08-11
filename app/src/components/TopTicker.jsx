@@ -8,11 +8,12 @@ export default function TopTicker() {
     <div className="flex shrink-0 divide-x divide-border bg-tint px-4 py-2 text-xs">
       {INDICES.map((index) => (
         <div key={index.name} className={index === INDICES[0] ? "flex-1 pr-4" : "flex-1 pl-4"}>
-          <p className="text-[11px] text-muted">
+          <p className="truncate text-[11px] text-muted">
             {index.name} <span className="text-[10px]">{index.exp}</span>
           </p>
-          <p className="mt-0.5 text-xs font-semibold text-fg">
-            {index.value} <span className={index.isUp ? "text-up" : "text-down"}>{index.change}</span>
+          <p className="mt-0.5 whitespace-nowrap text-xs font-semibold text-fg">{index.value}</p>
+          <p className={`whitespace-nowrap text-[11px] font-medium ${index.isUp ? "text-up" : "text-down"}`}>
+            {index.change}
           </p>
         </div>
       ))}
