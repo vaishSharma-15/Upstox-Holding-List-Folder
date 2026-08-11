@@ -5,14 +5,20 @@ const INDICES = [
 
 export default function TopTicker() {
   return (
-    <div className="flex shrink-0 divide-x divide-border bg-tint px-4 py-2 text-xs">
-      {INDICES.map((index) => (
-        <div key={index.name} className={index === INDICES[0] ? "flex-1 pr-4" : "flex-1 pl-4"}>
-          <p className="truncate text-[11px] text-muted">
+    <div className="grid shrink-0 grid-cols-2 divide-x divide-border bg-tint px-4 py-2 text-xs">
+      {INDICES.map((index, i) => (
+        <div key={index.name} className={i === 0 ? "pr-4" : "pl-4"}>
+          <p className="truncate text-[11px] leading-tight text-muted">
             {index.name} <span className="text-[10px]">{index.exp}</span>
           </p>
-          <p className="mt-0.5 whitespace-nowrap text-xs font-semibold text-fg">{index.value}</p>
-          <p className={`whitespace-nowrap text-[11px] font-medium ${index.isUp ? "text-up" : "text-down"}`}>
+          <p className="mt-1 whitespace-nowrap text-xs font-semibold leading-tight tabular-nums text-fg">
+            {index.value}
+          </p>
+          <p
+            className={`mt-0.5 whitespace-nowrap text-[11px] font-medium leading-tight tabular-nums ${
+              index.isUp ? "text-up" : "text-down"
+            }`}
+          >
             {index.change}
           </p>
         </div>
