@@ -127,9 +127,9 @@ export function BarChartIcon({ size = 20 }) {
 
 export function PieChartIcon({ size = 20 }) {
   return (
-    <Svg size={size}>
-      <path d="M12 3v9l7.8 4.5" />
-      <path d="M12 12A9 9 0 1 1 4.5 6.8" />
+    <Svg size={size} strokeLinejoin="round">
+      <path d="M21.21 15.89A10 10 0 1 1 8 2.83" />
+      <path d="M22 12A10 10 0 0 0 12 2v10z" fill="currentColor" />
     </Svg>
   );
 }

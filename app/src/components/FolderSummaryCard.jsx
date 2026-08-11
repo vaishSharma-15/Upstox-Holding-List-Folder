@@ -19,6 +19,8 @@ export default function FolderSummaryCard({ folder, holdings, onEdit }) {
     (sum, h) => sum + (h.ltp - h.ltp / (1 + h.dayChangePct / 100)) * h.qty,
     0
   );
+  const prevDayValue = totals.current - totalDayChange;
+  const totalDayChangePct = prevDayValue === 0 ? 0 : (totalDayChange / prevDayValue) * 100;
   const isDayUp = totalDayChange >= 0;
 
   return (
@@ -62,7 +64,7 @@ export default function FolderSummaryCard({ folder, holdings, onEdit }) {
           <p className="text-[11px] text-muted">Today's returns</p>
           <p className={`mt-0.5 text-xs font-semibold ${isDayUp ? "text-up" : "text-down"}`}>
             {isDayUp ? "+" : ""}
-            {formatNumber(totalDayChange)}
+            {formatNumber(totalDayChange)} ({formatPct(totalDayChangePct)})
           </p>
         </div>
       </div>
